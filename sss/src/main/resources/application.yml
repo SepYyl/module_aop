@@ -1,0 +1,26 @@
+spring:
+  thymeleaf:
+    template-resolver-order: 0
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    cache: false
+    servlet:
+      content-type: text/html
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/aop_operation?serverTimezone=GMT%2B8
+    username: root
+    password: Rmp1234!@#$
+#    调用者要负责传递对应的data配置
+proxy:
+  grafana:
+    # 需要代理的url前缀
+    servlet_url: /grafana/*
+    # grafana url
+    target_url: localhost:3000
+    # grafana api key, 添加一个Bearer前缀
+    key: 'Bearer eyJrIjoiUkZFeW5MeTJHZ0FjT0pTYVREZjl2OXVFenRuUmdraTYiLCJuIjoiMSIsImlkIjoxfQ=='
+server:
+  port: 8888
